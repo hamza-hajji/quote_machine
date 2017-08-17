@@ -1,0 +1,21 @@
+.main-content {
+  margin-top: 15rem;
+}
+
+.quote {
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 30px;
+  padding-bottom: 40px;
+  font-size: 1.2rem;
+}
+
+.quote:hover {
+  background-color: #eee;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+}
