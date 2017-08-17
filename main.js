@@ -15,16 +15,20 @@ function fetchQuote(callback) {
 $(document).ready(function () {
   $quote = $('.quote');
   $author = $('.author');
+  $tweet = $('button.tweet');
   fetchQuote(function (data) {
-    $quote.text(data.quote);
+    $quote.html("&ldquo; " + data.quote + " &rdquo;");
     $author.html("&mdash;&nbsp;&nbsp;" + data.author);
   });
   $button = $('button.refresh');
   $button.click(function (e) {
     fetchQuote(function (data) {
       console.log(data);
-      $quote.text(data.quote);
+      $quote.html("&ldquo; " + data.quote + " &rdquo;");
       $author.html("&mdash;&nbsp;&nbsp;" + data.author);
     });
+  });
+  $tweet.click(function () {
+    window.open('https://twitter.com/intent/tweet?text=' + $quote.text() + $author.text(), '_blank');
   });
 });
